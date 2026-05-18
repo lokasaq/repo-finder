@@ -1,0 +1,18 @@
+{
+  "name": "repo-finder",
+  "version": "1.0.0",
+  "description": "Multi-platform repository search with 50+ language support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.1",
+    "express": "^4.21.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

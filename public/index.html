@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repo Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <h1 data-i18n="title">Repo Finder</h1>
+                <div class="lang-selector">
+                    <select id="langSelect">
+                        <option value="en">English</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="it">Italiano</option>
+                        <option value="pt">Português</option>
+                        <option value="ru">Русский</option>
+                        <option value="zh">中文 (简体)</option>
+                        <option value="zh-TW">中文 (繁體)</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="ar">العربية</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="pa">ਪੰਜਾਬੀ</option>
+                        <option value="te">తెలుగు</option>
+                        <option value="mr">मराठी</option>
+                        <option value="ta">தமிழ்</option>
+                        <option value="ur">اردو</option>
+                        <option value="gu">ગુજરાતી</option>
+                        <option value="kn">ಕನ್ನಡ</option>
+                        <option value="ml">മലയാളം</option>
+                        <option value="th">ไทย</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="ms">Bahasa Melayu</option>
+                        <option value="tl">Filipino</option>
+                        <option value="nl">Nederlands</option>
+                        <option value="pl">Polski</option>
+                        <option value="cs">Čeština</option>
+                        <option value="sk">Slovenčina</option>
+                        <option value="hu">Magyar</option>
+                        <option value="ro">Română</option>
+                        <option value="bg">Български</option>
+                        <option value="sr">Српски</option>
+                        <option value="hr">Hrvatski</option>
+                        <option value="sl">Slovenščina</option>
+                        <option value="uk">Українська</option>
+                        <option value="be">Беларуская</option>
+                        <option value="lt">Lietuvių</option>
+                        <option value="lv">Latviešu</option>
+                        <option value="et">Eesti</option>
+                        <option value="fi">Suomi</option>
+                        <option value="sv">Svenska</option>
+                        <option value="no">Norsk</option>
+                        <option value="da">Dansk</option>
+                        <option value="is">Íslenska</option>
+                        <option value="el">Ελληνικά</option>
+                        <option value="he">עברית</option>
+                        <option value="fa">فارسی</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="am">አማርኛ</option>
+                        <option value="yo">Yorùbá</option>
+                        <option value="ig">Igbo</option>
+                        <option value="ha">Hausa</option>
+                        <option value="zu">isiZulu</option>
+                        <option value="af">Afrikaans</option>
+                        <option value="sq">Shqip</option>
+                        <option value="az">Azərbaycan</option>
+                        <option value="ka">ქართული</option>
+                        <option value="hy">Հայերեն</option>
+                        <option value="uz">Oʻzbekcha</option>
+                        <option value="kk">Қазақша</option>
+                        <option value="ky">Кыргызча</option>
+                        <option value="tg">Тоҷикӣ</option>
+                        <option value="mn">Монгол</option>
+                        <option value="my">မြန်မာ</option>
+                        <option value="km">ខ្មែរ</option>
+                        <option value="lo">ລາວ</option>
+                        <option value="ne">नेपाली</option>
+                        <option value="si">සිංහල</option>
+                        <option value="cy">Cymraeg</option>
+                        <option value="ga">Gaeilge</option>
+                        <option value="gd">Gàidhlig</option>
+                        <option value="mt">Malti</option>
+                        <option value="eu">Euskara</option>
+                        <option value="ca">Català</option>
+                        <option value="gl">Galego</option>
+                        <option value="la">Latina</option>
+                        <option value="eo">Esperanto</option>
+                    </select>
+                </div>
+            </div>
+            <p class="subtitle" data-i18n="subtitle">Search repositories across GitHub, GitLab & Bitbucket</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <form id="searchForm">
+                <div class="search-box">
+                    <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Enter repository name to search..." autofocus>
+                    <button type="submit" id="searchBtn" data-i18n="searchBtn">Search</button>
+                </div>
+                <div class="filters">
+                    <label class="filter-label">
+                        <input type="checkbox" class="source-filter" value="github" checked>
+                        GitHub
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" class="source-filter" value="gitlab" checked>
+                        GitLab
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" class="source-filter" value="bitbucket" checked>
+                        Bitbucket
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <div class="results-header">
+                <span id="resultsCount" data-i18n="resultsCount">0 results</span>
+                <select id="sortSelect">
+                    <option value="stars" data-i18n="sortByStars">Sort by Stars</option>
+                    <option value="name" data-i18n="sortByName">Sort by Name</option>
+                    <option value="updated" data-i18n="sortByUpdated">Sort by Updated</option>
+                </select>
+            </div>
+            <div id="resultsContainer">
+                <div class="empty-state">
+                    <p data-i18n="emptyState">Type a repository name in the search box above.</p>
+                </div>
+            </div>
+            <div id="loadingSpinner" class="hidden">
+                <div class="spinner"></div>
+                <p data-i18n="searching">Searching...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer">Repo Finder - Open source repository search engine</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
